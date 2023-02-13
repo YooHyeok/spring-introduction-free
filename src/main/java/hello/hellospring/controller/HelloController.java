@@ -9,7 +9,13 @@ public class HelloController {
 
     @GetMapping("hello")
     public String hello(Model model) {
-        model.addAttribute("data","Spring!");
+        model.addAttribute("data","spring!");
         return "hello";
+    }
+
+    @GetMapping("hello-static.html")
+    public String helloStatic(Model model) {
+        model.addAttribute("data","spring!");
+        return "hello-static";
     }
 }
