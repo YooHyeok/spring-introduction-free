@@ -1,16 +1,12 @@
-package hello.hellospring;
+package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
-//import org.junit.jupiter.api.Assertions;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MemoryMemberRepositoryTest {
 
@@ -18,7 +14,7 @@ public class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach // 클래스 선언된 메서드가 끝날때마다 한번씩 실행됨
-    public void afterEach() {
+    public void afterEach() { //테스트 종료 후 메모리 DB 저장된 데이터 삭제
         repository.clearStore();
     }
     @Test

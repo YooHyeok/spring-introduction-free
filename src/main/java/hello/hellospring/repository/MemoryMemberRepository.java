@@ -8,8 +8,9 @@ public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();// store는 데이터가 임시저장될 공간.
     // Key는 id의 반환타입 값은 Member의 객체이므로 Member
-    // 실무에서는 동시성 문제를 야기하므로 공유되는 변수일때는 concurrentHashMap을 써야하지만 예제이므로 HashMap을 사용한다.
-    private static long sequence = 0L; //실무에서는 AtomicLong 등을 사용해야하지만 단순히 long으로 선언
+    // 실무에서는 동시성 문제를 야기하므로 공유되는 변수일때는 concurrentHashMap, AtomicLong 사용을 고려한다.
+    // https://mygumi.tistory.com/112
+    private static long sequence = 0L;
     @Override
     public Member save(Member member) {
         member.setId(++sequence); //id값 증가
