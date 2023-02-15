@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org"> <!-- http:// 를 빼도 타임리프가 작동하긴 하지만 코드타이핑시 자동완성이 되지 않는다.-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>이름</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="member : ${members}"> <!-- each는 자바의 forEach 구문과 비슷 - 하나씩 추출 -->
+                        <td th:text="${member.id}"></td><!-- getter 동작 -->
+                        <td th:text="${member.name}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!--    <button th:onclick="(function(event){console.log(event); e.preventDefault; location.href='/';})()">메인으로</button>-->
+    <button onclick="event1(e)">메인으로</button>
+    <script>
+
+        function event1(e) {
+            console.log(e);
+            // e.preventDefault();
+            location.href="/"
+        }
+    </script>
+</body>
+</html>
