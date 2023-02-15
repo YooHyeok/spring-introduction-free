@@ -24,12 +24,17 @@
         </div>
     </div>
 <!--    <button th:onclick="(function(event){console.log(event); e.preventDefault; location.href='/';})()">메인으로</button>-->
-    <button onclick="event1(e)">메인으로</button>
+    <button type="button" onclick="event1(event);">메인으로</button>
     <script>
 
-        function event1(e) {
-            console.log(e);
+        /*function event1(e) {
+            e.preventDefault();
+            location.href="/"
             // e.preventDefault();
+        }*/
+
+        event1 = (e) => {
+            // e.preventDefault(); //submit은 form태그에서 작동한다.
             location.href="/"
         }
     </script>
