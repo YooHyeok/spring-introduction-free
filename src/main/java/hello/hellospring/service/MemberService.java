@@ -3,11 +3,13 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional
 public class MemberService {
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
     //setter Injection을 사용하지 않는 이유 : setter를 개방하게되면 service의 비즈니스메소드를 선언할때 의도치않게 set메소드에도 접근이 가능해지기 때문이다.
