@@ -43,4 +43,9 @@ public class SpringBeanConfig {
         return new EntityManagerJpaMemberRepository(entityManager);
 
     }
+
+/*    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 }
